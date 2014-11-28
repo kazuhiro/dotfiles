@@ -16,7 +16,9 @@
 		      groovy-mode
 		      scala-mode2
 		      git-commit-mode
-		      elixir-mode))
+		      elixir-mode
+		      erlang
+		      lacarte))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -24,6 +26,7 @@
 
 ;; keybindings
 (global-set-key (kbd "C-c g") 'goto-line)
+(global-set-key (kbd "ESC M-x") 'lacarte-execute-menu-command)
 (global-set-key (kbd "C-q") 'query-replace)
 (global-set-key (kbd "C-c q") 'query-replace-regexp)
 (global-set-key (kbd "C-z") 'undo)
