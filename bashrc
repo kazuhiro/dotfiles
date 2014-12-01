@@ -115,7 +115,7 @@ fi
 
 alias e='emacs -nw'
 
-PATH="$PATH:$HOME/Software/rebar:$HOME/Software/elixir/bin:$HOME/Projects/bin/:$HOME/Software/maven/bin"
+PATH="$PATH:$HOME/Software/rebar:$HOME/Software/elixir/bin:$HOME/Projects/bin/:$HOME/Software/maven/bin:$HOME/Software/bin"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 

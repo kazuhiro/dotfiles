@@ -18,7 +18,8 @@
 		      git-commit-mode
 		      elixir-mode
 		      erlang
-		      lacarte))
+		      lacarte
+		      cider))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -27,8 +28,8 @@
 ;; keybindings
 (global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key (kbd "ESC M-x") 'lacarte-execute-menu-command)
-(global-set-key (kbd "C-q") 'query-replace)
-(global-set-key (kbd "C-c q") 'query-replace-regexp)
+;; (global-set-key (kbd "C-q") 'query-replace)
+;; (global-set-key (kbd "C-c q") 'query-replace-regexp)
 (global-set-key (kbd "C-z") 'undo)
 ;; (global-set-key (kbd "C-w") 'er/expand-region)
 
@@ -56,7 +57,7 @@
  '(background-mode dark)
  '(cursor-color "#839496")
  '(custom-enabled-themes (quote (solarized-dark)))
- '(custom-safe-themes (quote ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(foreground-color "#839496")
  '(inhibit-startup-screen t))
 (custom-set-faces
