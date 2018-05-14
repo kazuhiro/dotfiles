@@ -1,15 +1,25 @@
 #!/bin/bash
 
-TERMINATOR_WINDOW_ID=`xdotool search --onlyvisible --classname "Terminal"`
-ACTIVE_WINDOW_ID=`xdotool getwindowfocus`
+process_name="xfce4-terminal"
+app="xfce4-terminal"
 
-if [ "$TERMINATOR_WINDOW_ID" == "" ]; then
-   xfce4-terminal
+pid=$(pgrep -f $process_name)
+
+# If it isn't launched, then launch
+
+if [ -z $pid ]; then
+    $app
+
 else
-   if [ "$TERMINATOR_WINDOW_ID" == "$ACTIVE_WINDOW_ID" ]; then
-    xdotool keydown Alt+Shift+Page_Down
-    xdotool keyup Alt+Shift+Page_Down
-   else
-    xdotool windowactivate $TERMINATOR_WINDOW_ID
-   fi
+
+    # If it is launched then check if it is focused
+
+    foc=$(xdotool getactivewindow getwindowpid)
+    if [[ $pid == $foc ]]; then
+	# if it is focused, then minimize
+	xdotool getactivewindow windowminimize
+    else
+	# if it isn't focused then get focus
+	wmctrl -x -R $app
+    fi
 fi
