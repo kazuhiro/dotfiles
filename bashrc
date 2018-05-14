@@ -114,10 +114,13 @@ if ! shopt -oq posix; then
 fi
 
 alias e='emacs -nw'
+alias v='vim'
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
-PATH="$PATH:$HOME/Software/rebar:$HOME/Software/elixir/bin:$HOME/Projects/bin/:$HOME/Software/maven/bin:$HOME/Software/bin"
+PATH="$PATH:$HOME/.rvm/bin:$PATH:$HOME/Software/rebar:$HOME/Software/elixir/bin:$HOME/Projects/bin/:$HOME/Software/maven/bin:$HOME/Software/bin:$HOME/Software/scala/bin:$PATH:/usr/lib/erlang/bin:$PATH:$HOME/.cargo/bin:$PATH:$HOME/Software/gradle/bin"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export RUST_SRC_PATH=$HOME/Software/rustc-1.5.0/src
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
